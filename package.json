@@ -1,0 +1,34 @@
+{
+  "name": "ioribot",
+  "version": "1.0.0",
+  "description": "IoriBot",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "start": "tsc --skipLibCheck && node dist/index.js",
+    "build": "tsc --skipLibCheck",
+    "cleanup": "rm -r ./dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whamer100/IoriBot.git"
+  },
+  "author": "whamer100, jkooktxnn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whamer100/IoriBot/issues"
+  },
+  "homepage": "https://github.com/whamer100/IoriBot#readme",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^13.9.0",
+    "@types/ramda": "^0.26.43",
+    "@types/typescript": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "eris": "^0.11.2",
+    "eslint": "^6.8.0",
+    "ramda": "^0.27.0",
+    "typescript": "^3.8.3"
+  }
+}

@@ -86,3 +86,10 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+
+# other stuff lol
+dist/
+.idea/
+.vscode/
+\.env
