@@ -1,4 +1,4 @@
-import { Member } from "eris"
+import { Member, AnyChannel } from "eris"
 import R = require("ramda");
 import { chain } from "ramda";
 
@@ -18,3 +18,14 @@ export const isOwner = (id: string) => (process.env.OWNERS || "13664413211741388
 
 export const isMod = (member: Member) =>
   member.permission.has("KICK_MEMBERS") || isOwner(member.id)
+
+  export const isGuildChannel = (channel: AnyChannel): boolean => {
+    switch (channel.type) {
+        case 0: return true; // TextChannel
+        case 2: return true; // VoiceChannel
+        case 4: return true; // CategoryChannel
+        case 5: return true; // NewsChannel
+        case 6: return true; // StoreChannel
+        default: return false;
+    }
+}

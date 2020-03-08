@@ -1,4 +1,4 @@
-import { Client } from "eris"
+import { Guild, Member, Client, TextChannel } from "eris"
 import { boxContents } from "./utils";
 
 const logStartup = (client: Client, cmdDesc: Map<string, string>) => {
@@ -16,4 +16,13 @@ const onReady = (client: Client, cmdDesc: Map<string, string>) => {
 
 export const handleEvents = (client: Client, cmdDesc: Map<string, string>) => {
   client.on("ready", () => onReady(client, cmdDesc));
+}
+
+export const welcomeMessage = (client: Client, guild: Guild, member: Member) => {
+  const welcomeChannelId = guild.systemChannelID!
+  const welcomeChannel = client.getChannel(welcomeChannelId) as TextChannel
+  
+  const welcomeMessageText = `Welcome, ${member.mention}! Work hard, and make sure you don't mess up and embarrass me, alright!?`
+  
+  welcomeChannel.createMessage(welcomeMessageText)
 }
